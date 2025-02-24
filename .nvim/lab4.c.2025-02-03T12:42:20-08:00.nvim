@@ -1,0 +1,10 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+
+int main() {
+  int *currentBrk = sbrk(0);
+  *currentBrk = sbrk(0);
+  printf("%p", currentBrk);
+}

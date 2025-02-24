@@ -1,0 +1,11 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+
+int main() {
+  int *blk1 = (int *)sbrk(128);
+  int *blk2 = (int *)sbrk(128);
+  printf("%p", blk1);
+  printf("%p", blk2);
+}

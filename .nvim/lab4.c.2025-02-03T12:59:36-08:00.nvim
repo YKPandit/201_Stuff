@@ -1,0 +1,29 @@
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/types.h>
+#include <unistd.h>
+
+struct header {
+  uint64_t size;
+  struct header *next;
+};
+
+int main() {
+  int *blk1 = (int *)sbrk(128);
+  int *blk2 = (int *)sbrk(128);
+  printf("%p\n", blk1);
+  printf("%p\n", blk2);
+
+  struct header *struct1 = (struct header *)sbrk(128);
+  struct header *struct2 = (struct header *)sbrk(128);
+
+  struct2->next = struct1;
+  struct2->size = 128;
+  struct1->next = NULL;
+  struct1->size = 128;
+
+  printf("%p\n", struct2->next);
+  printf("%p\n", struct1->next);
+}

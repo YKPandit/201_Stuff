@@ -20,7 +20,7 @@ int main() {
       for (int i = current; i >= 0; i--) {
         printf("%s\n", inputs[i]);
       }
-      for (int i = size - 1; i > current; i--) {
+      for (int i = size - 2; i > current; i--) {
         printf("%s\n", inputs[i]);
       }
     }

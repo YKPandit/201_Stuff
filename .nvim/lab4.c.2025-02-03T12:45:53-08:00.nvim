@@ -1,0 +1,10 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+
+int main() {
+  int blk1 = sbrk(128);
+  int blk2 = sbrk(128);
+  printf("%d", currentBrk);
+}
